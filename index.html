@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GAPIT Ant - Demo tương tác với nhân vật kiến hoạt hình">
+  <title>GAPIT Ant - Interactive Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div id="scene">
+      <!-- Ant Character -->
+      <div id="ant-container">
+        <img id="ant-character" src="/src/ant/image (1).svg" alt="GAPIT Ant Character">
+      </div>
+
+      <!-- Speech Bubble -->
+      <div id="speech-bubble" class="hidden">
+        <div id="speech-text"></div>
+        <div class="speech-tail"></div>
+      </div>
+
+      <!-- Hand Tap Unlock -->
+      <div id="hand-unlock" class="hidden">
+        <div id="hand-icon">🤚</div>
+        <div id="countdown-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="54"/>
+            <circle class="ring-progress" cx="60" cy="60" r="54"/>
+          </svg>
+        </div>
+        <div id="tap-text">Chạm vào đây!</div>
+      </div>
+
+      <!-- Unlock Result -->
+      <div id="unlock-result" class="hidden">
+        <div id="result-icon"></div>
+        <div id="result-text"></div>
+      </div>
+
+      <!-- Action Panel -->
+      <div id="action-panel" class="hidden">
+        <h2 id="action-title">Chọn hành động cho kiến</h2>
+        <div id="action-buttons">
+          <button class="action-btn" data-action="dance">
+            <span class="action-emoji">🎵</span>
+            <span class="action-label">Nhảy múa</span>
+          </button>
+          <button class="action-btn" data-action="eat">
+            <span class="action-emoji">🍎</span>
+            <span class="action-label">Ăn táo</span>
+          </button>
+          <button class="action-btn" data-action="sleep">
+            <span class="action-emoji">💤</span>
+            <span class="action-label">Ngủ</span>
+          </button>
+          <button class="action-btn" data-action="wave">
+            <span class="action-emoji">🎉</span>
+            <span class="action-label">Chào</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Particles background -->
+    <div id="particles"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
