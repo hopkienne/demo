@@ -1,14 +1,80 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Interactive video experience with an animated ant robot character" />
-    <title>Interactive Video Experience</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot G - Interactive AI</title>
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+    <!-- Loading Screen (Preload Background Frames) -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-text">G-SYSTEM BOOTING...</div>
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <button id="start-overlay" class="start-overlay hidden" type="button">
+        <span class="start-overlay__title">Chạm để bắt đầu</span>
+    </button>
+
+    <!-- Background Frame Player Canvas -->
+    <canvas id="frame-canvas"></canvas>
+    <div class="canvas-overlay"></div>
+
+    <!-- End Frame Overlay (shown after fade-out of canvas) -->
+    <img id="end-frame" class="end-frame" src="/frame_sharp_strong/end_frame.png" alt="">
+
+    <!-- Holographic Control Panel -->
+    <div id="holo-panel" class="holo-panel hidden">
+        <div class="holo-corner top-left"></div>
+        <div class="holo-corner top-right"></div>
+        <div class="holo-content">
+            <button class="holo-btn" data-section="info">Thông tin chung</button>
+            <button class="holo-btn" data-section="product">Sản phẩm</button>
+        </div>
+        <div class="holo-corner bottom-left"></div>
+        <div class="holo-corner bottom-right"></div>
+    </div>
+
+    <!-- AI Chatbot Interface (v1 mock) -->
+    <div id="chatbot" class="chatbot-container hidden">
+        <!-- Header -->
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <video class="chatbot-title-video" autoplay loop muted playsinline>
+                    <source src="/Character_jumping_and_202603311330.mp4" type="video/mp4">
+                </video>
+                <span class="chatbot-section-name"></span>
+            </div>
+            <button class="chatbot-close" title="Đóng">&times;</button>
+        </div>
+
+        <!-- Messages Area (Scrollable) -->
+        <div class="chatbot-messages">
+            <!-- Messages inserted via JS -->
+        </div>
+
+        <!-- Input Box Area -->
+        <div class="chatbot-input-area">
+            <input type="text" class="chatbot-input" placeholder="Khởi động truy vấn..." autocomplete="off">
+            <button class="chatbot-send" title="Gửi (Enter)">
+                <svg viewBox="0 0 24 24">
+                    <!-- A simple send icon -->
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Core Vite Entry Script -->
+    <script type="module" src="/src/js/app.js"></script>
+</body>
+
 </html>

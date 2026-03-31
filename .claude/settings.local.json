@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(ffmpeg -version)",
+      "Bash(where.exe ffmpeg:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
